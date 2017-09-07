@@ -4,6 +4,7 @@ header {
 	background-color: #98ff98;
 	background-repeat: no-repeat;
 	background-position: right;
+	border: 1px solid grey;
 	display: flex;
 	justify-content: space-between;
 	padding-left: 20px;
@@ -13,13 +14,10 @@ header {
 body {
 	color: black;            /*#943F2D; light brown*/
 	font-family: "Josefin Sans";
+	background-color: #E3E1DC;
 }
 
-h1 {
-	text-decoration: underline;
-}
-
-h2 {
+h1, h2, h3 {
 	text-decoration: underline;
 }
 
@@ -44,17 +42,17 @@ nav ul a {
 
 .filterList {
 	background-color: #98ff98;
-	padding-top: 20px;
-	padding-left: 20px;
-	padding-right: 70px;
-	width: 200px;
+	border: 1px solid grey;
+	padding: 20px;
+	width: 400px;
 }
 
 .pic-container {
 	display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    margin-left: 125px;
+    justify-content: center;
+    align-items: center;
 }
 
 img {
@@ -67,19 +65,17 @@ img {
 
 .aboutUs {
 	background-color: #98ff98;
+	border: 1px solid grey;
 	padding: 20px;
-	width: 200px;
-	/*margin-left: -150px;*/
+	width: 400px;
 }
 
 .responsive {
 	margin: 5px;
 	padding: 0 6px;
     width: 25%;
-    /*float: left;*/
 }
 
 .price {
-	padding-top: 3px;
 	padding-left: 10px;
 }
