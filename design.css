@@ -5,6 +5,7 @@ header {
 	background-repeat: no-repeat;
 	background-position: right;
 	border: 1px solid grey;
+	box-shadow: 3px 3px 1px grey;
 	display: flex;
 	justify-content: space-between;
 	padding-left: 20px;
@@ -78,4 +79,19 @@ img {
 
 .price {
 	padding-left: 10px;
+}
+
+.filter {
+	margin: 10px;
+	border-radius: 4px;
+	border: 1px solid black;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	transition-duration: 0.4s;
+	background-color: #E3E1DC;
+	padding: 0px 10px;
+}	
+
+.filter:hover {
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	background-color: grey;
 }
