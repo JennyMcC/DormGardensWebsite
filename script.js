@@ -1,6 +1,10 @@
 
 var gardenController = (function() {
 
+
+var initGallery = function(jsonResponseUrl) {
+
+
 	var Plant = function(name, picture, price, planterColor) {
 		this.name = name;
 		this.picture = picture;
@@ -16,12 +20,13 @@ var gardenController = (function() {
 
 
 
+
 	var allPlants = JSON.parse(xhttp.responstText); //allPlants is the database (java)
 	var galleryContent = [];
-	var plant;
+	var plants;
 
 	for (var i = 0; i < allPlants.length; i++) {
-		plant = allPlants[i];
+		plants = allPlants[i];
 
 		galleryContent[i] = setGallery(plant);
 	}
@@ -33,17 +38,29 @@ var gardenController = (function() {
 			filterNames += plant.filters[j].displayName
 		};
 	}
+}
+
+
+
+
+
+
+
 
 
 
 
 $('button[name="generatePlantsByFilter"]').on('click', function() {
+
+		var selectedFilters = [];
+
 		$(".filter:checked").each(function() {
 			selectedFilters.push(this.name);
 		});
 
-		
-})
+		initGallery(selectedFilters);
+
+});
 
 
 
@@ -51,9 +68,6 @@ $('button[name="generatePlantsByFilter"]').on('click', function() {
 
 
 
-
-
-}
 
 
 })();
@@ -90,7 +104,7 @@ var controller = (function(gardenCtrl, UICtrl) {
 
 		document.addEventListener('keypress', function(event) {
 			if (event.keycode === 13 || event.which === 13) {
-				crtlAddItem();
+				//do something
 			}
 		});
 
