@@ -8,26 +8,49 @@ var gardenController = (function() {
 		this.planterColor = planterColor;
 	};
 
-var plant1 = new Plant('Ironwood Succulent Planter', '1', 15, 'medium');
-var plant2 = new Plant('Marblewood Succulent Planter', '2', 15, 'light');
-var plant3 = new Plant('African Padauk Succulent Planter', '3', 15, 'medium');
+	var plant1 = new Plant('Ironwood Succulent Planter', '1', 15, 'medium');
+	var plant2 = new Plant('Marblewood Succulent Planter', '2', 15, 'light');
+	var plant3 = new Plant('African Padauk Succulent Planter', '3', 15, 'medium');
 
 
-var allPlants = JSON.parse(xhttp.responstText);
-var galleryContent = [];
-var plant;
-
-for (var i = 0; i < allPlants.length; i++) {
-	plant = allPlants[i];
-	galleryContent[i] = setGallery(plant);
-}
 
 
-function setGallery(plant) {
-	var filterNames = "";
-	for (var j = 0; j < plant.filters.length; j++) {
-		filterNames += plant.filters[j].displayName;
+
+	var allPlants = JSON.parse(xhttp.responstText); //allPlants is the database (java)
+	var galleryContent = [];
+	var plant;
+
+	for (var i = 0; i < allPlants.length; i++) {
+		plant = allPlants[i];
+
+		galleryContent[i] = setGallery(plant);
 	}
+
+
+	function setGallery(plant) {
+		var filterNames = "";
+		for (var j = 0; j < plant.filters.length; j++) {
+			filterNames += plant.filters[j].displayName
+		};
+	}
+
+
+
+
+$('button[name="generatePlantsByFilter"]').on('click', function() {
+		$(".filter:checked").each(function() {
+			selectedFilters.push(this.name);
+		});
+
+		
+})
+
+
+
+
+
+
+
 
 
 }
@@ -46,19 +69,51 @@ var UIController = (function() {
 	};
 
 
+
+
 })();
+
+
+
 
 
 
 
 var controller = (function(gardenCtrl, UICtrl) {
 
+	var setupEventListeners = function() {
 
+		var DOMstrings = UICtrl.getDOMstrings();
+
+
+		document.querySelector(DOMstrings.).addEventListener('click', )
+
+		document.addEventListener('keypress', function(event) {
+			if (event.keycode === 13 || event.which === 13) {
+				crtlAddItem();
+			}
+		});
+
+	}
+
+
+	return {
+		init: function() {
+			console.log('app started.');
+			UICtrl.displayGallery();
+			setupEventListeners();
+		}
+	};
 
 
 })(gardenController, UIController);
 
 controller.intit();
+
+
+
+
+
 
 
 
