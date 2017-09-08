@@ -34,6 +34,10 @@ nav ul a {
 	padding-right: 50px;
 }
 
+nav ul a:hover {
+	color: yellow;
+}
+
 .mainPage {
 	display: flex;
 	flex-direction: row;
@@ -46,6 +50,10 @@ nav ul a {
 	border: 1px solid grey;
 	padding: 20px;
 	width: 400px;
+}
+
+button {
+	margin-top: 10px;
 }
 
 .pic-container {

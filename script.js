@@ -8,9 +8,9 @@ var gardenController = (function() {
 		this.planterColor = planterColor;
 	};
 
-var plant1 = new Plant('Ironwood Succulent Planter', '1', '$15', 'medium');
-var plant2 = new Plant('Marblewood Succulent Planter', '2', '$15', 'light');
-var plant3 = new Plant('African Padauk Succulent Planter', '3', '$15', 'medium');
+var plant1 = new Plant('Ironwood Succulent Planter', '1', 15, 'medium');
+var plant2 = new Plant('Marblewood Succulent Planter', '2', 15, 'light');
+var plant3 = new Plant('African Padauk Succulent Planter', '3', 15, 'medium');
 
 
 var allPlants = JSON.parse(xhttp.responstText);
@@ -29,7 +29,7 @@ function setGallery(plant) {
 		filterNames += plant.filters[j].displayName;
 	}
 
-	
+
 }
 
 
@@ -63,13 +63,16 @@ controller.intit();
 
 
 	// when a filter is clicked on:
-	document.querySelector('.filter').addEventListener('click', function() {
+	document.querySelector('.generatePlantsByFilter').addEventListener('click', function() {
 
 		for
 
 
 		var galleryDOM = document.querySelector('.plant');
 			galleryDOM.src = 'images/plant' + this.picture + '.jpg';
+
+		var galleryDOM = document.querySelector('.price');
+			galleryDOM.src = 'price: $' + this.price;
 
 	});
 
