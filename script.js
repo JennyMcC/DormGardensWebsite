@@ -38,6 +38,16 @@ var initGallery = function(jsonResponseUrl) {
 			filterNames += plant.filters[j].displayName
 		};
 	}
+
+	/*
+	function setGallery(plant) {
+		for (var j = 0; j < plant.length; j++) {
+			if (this.price === 15 && ".filter-checked")
+		}
+	} */
+
+
+
 }
 
 
